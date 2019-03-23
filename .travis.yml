@@ -8,8 +8,9 @@ before_install:
 jobs:
   include:
     - stage: test1
-    - script:
+      script:
         - docker exec -it centos ls -l
         - ls
-    - script:
+    - stage: test2
+      script:
         - ls -l
