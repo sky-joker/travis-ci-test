@@ -8,5 +8,7 @@ before_install:
 
 jobs:
   include:
-    - script: docker exec -it centos ls -l
-    - script: ls -l
+    - name: test1
+      script: docker exec -it centos ls -l
+    - name: test2
+      script: ls -l
