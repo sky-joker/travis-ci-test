@@ -5,6 +5,7 @@ services:
 before_install:
   - docker build -t centos:centos7-1 .
   - docker run -d -it --name centos centos:centos7-1
+  - test_var="TEST"
 
 jobs:
   include:
@@ -15,3 +16,4 @@ jobs:
       script:
         - ls -l
         - env
+        - echo $test_var
