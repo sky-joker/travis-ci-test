@@ -17,3 +17,4 @@ jobs:
         - ls -l
         - env
         - echo $test_var
+      if: $test_var
