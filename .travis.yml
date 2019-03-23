@@ -11,5 +11,5 @@ jobs:
       script:
         - docker exec -it centos ls -l
         - ls
-      script:
+    - script:
         - ls -l
