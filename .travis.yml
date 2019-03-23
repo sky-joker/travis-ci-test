@@ -5,8 +5,13 @@ before_install:
   - docker build -t centos:centos7-1 .
   - docker run -d -it --name centos centos:centos7-1
 
-script:
-  - docker exec -it centos ls -l
-  - docker exec -it centos bash
-  - ls
-
+jobs:
+  include:
+    - stage: test1
+      script:
+        - docker exec -it centos ls -l
+        - docker exec -it centos bash
+        - ls
+    - stage: test2
+      script:
+        - ls
