@@ -10,8 +10,6 @@ jobs:
     - stage: test1
       script:
         - docker exec -it centos ls -l
-        - docker exec -it centos bash
         - ls
-    - stage: test2
       script:
-        - ls
+        - ls -l
