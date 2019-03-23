@@ -12,4 +12,6 @@ jobs:
       name: test1
       script: docker exec -it centos ls -l
     - name: test2
-      script: ls -l
+      script:
+        - ls -l
+        - env
