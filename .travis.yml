@@ -5,7 +5,10 @@ services:
 before_install:
   - docker build -t centos:centos7-1 .
   - docker run -d -it --name centos centos:centos7-1
-  - test_var="TEST"
+
+before_script:
+  - export test_var1="TEST"
+  - export test_var2=""
 
 jobs:
   include:
@@ -17,4 +20,8 @@ jobs:
         - ls -l
         - env
         - echo $test_var
-      if: env(test_var) IS present
+      if: env(test_var1) IS present
+    - name: test3
+      script:
+        - echo test
+      if: env(test_var2) IS present
